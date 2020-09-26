@@ -22,7 +22,7 @@ node {
             sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE } 'rm -rf spring-petclinic* && git clone https://github.com/spring-projects/spring-petclinic.git' "
         }
         
-        stage("Install pip3") {
+        stage("Built Application") {
             sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE }  'cd spring-petclinic/ && ./mvnw package'"
             
         }
