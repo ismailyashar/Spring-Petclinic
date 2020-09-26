@@ -19,7 +19,7 @@ node {
             
         }
         stage("Clone Repo") {
-            sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE }' git clone https://github.com/spring-projects/spring-petclinic.git && ls'"
+            sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE } git clone https://github.com/spring-projects/spring-petclinic.git "
         }
         
         stage("Install pip3") {
