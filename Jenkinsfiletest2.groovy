@@ -27,7 +27,7 @@ node {
             
         }
         stage("Built Application") {
-            sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE }  mv target/*.jar target/app.jar "
+            sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE }  'cd spring-petclinic/ && mv target/*.jar target/app.jar '"
             
          stage("Built Application") {
             sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE }  java -jar spring-petclinic/target/app.jar"
