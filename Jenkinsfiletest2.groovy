@@ -23,7 +23,7 @@ node {
         }
         
         stage("Install pip3") {
-            sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE }  ./mvnw package "
+            sh "ssh -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${ params.SSHNODE }  'cd spring-petclinic/ && ./mvnw package'"
             
         }
         stage("Built Application") {
